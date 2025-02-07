@@ -2,7 +2,7 @@
 'RCET 0265
 'Spring 2025
 'Fortune Cookie
-'URL: 
+'URL: https://github.com/horsjaco117/FortuneCookie
 
 Option Strict On
 Option Explicit On
@@ -11,20 +11,35 @@ Module Module1
 
     Sub Main()
         Dim userInput As String
+        Dim Salgate As Boolean
 
         Console.WriteLine("Estas listo para una adivinanza?")
         Console.ReadLine()
         Randomize(DateTime.Now.Millisecond)
-        For i = 1 To 1
-            'Console.WriteLine(RandomNumber())
-            Console.WriteLine(RandomNumberbetween(1, 3))
-        Next
-        Console.WriteLine(StrDup(80, "*"))
-        For i = 1 To 10
-            'Console.WriteLine(RandomNumber())
-            Console.WriteLine(RandomNumberbetween(1, 4))
-        Next
 
+
+
+        Dim randomNumber As Integer = RandomNumberbetween(1, 3)
+        Console.WriteLine()
+        Console.WriteLine()
+        Console.WriteLine("Preparate por el consejo de los chinos...")
+        Console.WriteLine("Numero selecionado: " & randomNumber)
+        Console.WriteLine()
+
+        Select Case randomNumber
+            Case 1
+                Console.WriteLine()
+                Console.WriteLine("Aqui lo tienes chavo")
+            Case 2
+                Console.WriteLine()
+                Console.WriteLine("Asi pasa cuando sucede")
+            Case 3
+                Console.WriteLine()
+                Console.WriteLine("Ni hay pedo bro...")
+
+        End Select
+
+        Console.ReadLine()
     End Sub
 
     Function MyActualLuckyNumber() As Integer
