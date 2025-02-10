@@ -10,63 +10,38 @@ Option Explicit On
 Module Module1
 
     Sub Main()
-        Dim userInput As String
-        Dim Salgate As Boolean
 
-        Console.WriteLine("Estas listo para una adivinanza?")
+        Console.WriteLine("Type any letters and hit enter to recieve advice!")
         Console.ReadLine()
-        Randomize(DateTime.Now.Millisecond)
-
-
+        Randomize(DateTime.Now.Millisecond) 'This determines the randomize
 
         Dim randomNumber As Integer = RandomNumberbetween(1, 3)
+        'Above code allows for random selection of wisdoms 1-3
+
         Console.WriteLine()
-        Console.WriteLine()
-        Console.WriteLine("Preparate por el consejo de los chinos...")
-        Console.WriteLine("Numero selecionado: " & randomNumber)
+        Console.WriteLine("Fortune Selected: " & randomNumber)
         Console.WriteLine()
 
+        'The three wisdoms
         Select Case randomNumber
             Case 1
                 Console.WriteLine()
-                Console.WriteLine("Aqui lo tienes chavo")
+                Console.WriteLine("Do or do not go. The road of life is full" &
+                                  "of indecisive squirrels...")
             Case 2
                 Console.WriteLine()
-                Console.WriteLine("Asi pasa cuando sucede")
+                Console.WriteLine("In the battle of you vs. a stubborn pickle" &
+                                  "jar, victory will be yours...")
             Case 3
                 Console.WriteLine()
-                Console.WriteLine("Ni hay pedo bro...")
+                Console.WriteLine("The fortune you seek is in another cookie...")
 
         End Select
 
-        Console.ReadLine()
     End Sub
 
-    Function MyActualLuckyNumber() As Integer
-        Return 77
-    End Function
-
-    Function sumof(firstNumber As Integer, secondNumber As Integer) As Integer
-        Dim result As Integer
-
-        result = firstNumber + secondNumber
-
-        Return result
-    End Function
-
-    Function RandomNumber() As Integer
-        Dim myRandomNumber As Single
-        Randomize()
-
-        myRandomNumber = Rnd() * 10
-        myRandomNumber = Int(myRandomNumber) + 1
-
-        Return CInt(myRandomNumber)
-    End Function
-
-
     Function RandomNumberbetween(min As Integer, max As Integer) As Integer
-        'actual code here!
+        'Extra random number code
         Dim temp As Single
         Randomize()
         temp = Rnd()
@@ -74,7 +49,5 @@ Module Module1
         temp += min
         Return CInt(temp)
     End Function
-
-
 
 End Module
